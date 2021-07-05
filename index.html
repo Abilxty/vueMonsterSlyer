@@ -31,7 +31,7 @@
       </section>
       <section v-if="winner" class="container">
         <h2 v-if="winner === 'monster'">Game Over!</h2>
-        <h2 v-if="winner === 'player'">You won!</h2>
+        <h2 v-else-if="winner === 'player'">You won!</h2>
         <h2 v-else>draw</h2>
         <button @click="startGame">Start new Game</button>
       </section>

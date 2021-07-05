@@ -13,10 +13,14 @@ const app = Vue.createApp({
   },
   computed: {
     playerBarStyle() {
-      return this.playerHealth <= 0 ? 0 : { width: this.playerHealth + "%" };
+      return this.playerHealth <= 0
+        ? { width: 0 + "%" }
+        : { width: this.playerHealth + "%" };
     },
     monsterBarStyle() {
-      return this.monsterHealth <= 0 ? 0 : { width: this.monsterHealth + "%" };
+      return this.monsterHealth <= 0
+        ? { width: 0 + "%" }
+        : { width: this.monsterHealth + "%" };
     },
     mayUseSpecialAttack() {
       return this.currentRound % 3 != 0;
