@@ -31,7 +31,7 @@ const app = Vue.createApp({
       }
     },
     monsterHealth(value) {
-      if (value <= 0 && this.monsterHealth <= 0) {
+      if (value <= 0 && this.playerHealth <= 0) {
         this.winner = "draw";
       } else if (value <= 0) {
         this.winner = "player";
@@ -39,6 +39,9 @@ const app = Vue.createApp({
     },
   },
   methods: {
+    surrender() {
+      this.winner = "monster";
+    },
     startGame() {
       this.winner = null;
       this.currentRound = 0;

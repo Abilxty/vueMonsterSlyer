@@ -35,13 +35,13 @@
         <h2 v-else>draw</h2>
         <button @click="startGame">Start new Game</button>
       </section>
-      <section id="controls">
+      <section id="controls" v-if="winner === null">
         <button @click="attackMonster">ATTACK</button>
         <button :disabled="mayUseSpecialAttack" @click="specialAttack">
           SPECIAL ATTACK
         </button>
         <button @click="healPlayer">HEAL</button>
-        <button>SURRENDER</button>
+        <button @click="surrender">SURRENDER</button>
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
